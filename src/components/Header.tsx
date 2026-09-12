@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Moon, Volume2, VolumeX, Activity } from 'lucide-react';
+import { Sun, Moon, Volume2, VolumeX, Activity, Coffee } from 'lucide-react';
 import { SoundProfile } from '../services/audioSynthesizer';
 
 export interface HeaderProps {
@@ -46,7 +46,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        {/* Right Controls: Sound profile, Volume, Theme toggle */}
+        {/* Right Controls: Sound profile, Volume, Coffee, Theme toggle */}
         <div className="flex items-center gap-3 sm:gap-4 ml-auto">
           {/* Sound Profile Selector */}
           <div className="flex items-center gap-1.5">
@@ -93,6 +93,18 @@ export const Header: React.FC<HeaderProps> = ({
               {Math.round(volume * 100)}%
             </span>
           </div>
+
+          {/* Buy Me a Coffee Button */}
+          <a
+            href="https://buymeacoffee.com/vijaik2k7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-lg bg-[var(--bg-muted)] hover:bg-[var(--border-subtle)] text-[var(--text-secondary)] hover:text-amber-500 border border-[var(--border-subtle)] transition-all"
+            title="Buy me a coffee"
+            aria-label="Buy me a coffee"
+          >
+            <Coffee className="w-4 h-4 text-amber-500" />
+          </a>
 
           {/* Theme Toggle */}
           <button

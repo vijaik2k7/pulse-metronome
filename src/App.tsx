@@ -5,6 +5,7 @@ import { BeatMatrix } from './components/BeatMatrix';
 import { PrimaryControls } from './components/PrimaryControls';
 import { useMetronomeEngine } from './hooks/useMetronomeEngine';
 import { getItalianTempoTerm } from './utils/tempoUtils';
+import { Coffee } from 'lucide-react';
 
 export const App: React.FC = () => {
   // Theme state ('dark' | 'light') with local storage and system preference fallback
@@ -108,7 +109,7 @@ export const App: React.FC = () => {
 
       {/* Main Metronome Workspace Card with Rectangular Heartbeat Pulse Wave */}
       <main className="flex-1 flex items-center justify-center p-2 sm:p-4 min-h-0 overflow-hidden relative">
-        {/* Heartbeat Pulse Wave Element (Keyed to currentBeat to trigger expanding pulse wave on every tick) */}
+        {/* Heartbeat Pulse Wave Element */}
         {isPlaying && currentBeat >= 0 && currentBeatState !== 'mute' && (
           <div
             key={currentBeat}
@@ -160,7 +161,7 @@ export const App: React.FC = () => {
         </div>
       </main>
 
-      {/* Footer with keyboard shortcut hint badges */}
+      {/* Footer with keyboard shortcut hint badges & Coffee link */}
       <footer className="w-full py-4 px-4 border-t border-[var(--border-subtle)] bg-[var(--bg-card)]/50 backdrop-blur-sm transition-colors duration-200">
         <div className="max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--text-secondary)]">
           <div className="flex items-center gap-2 flex-wrap justify-center">
@@ -180,9 +181,16 @@ export const App: React.FC = () => {
               <span>Tap</span>
             </div>
           </div>
-          <span className="font-serif italic text-[11px] opacity-75">
-            Pulse Metronome • Precision Lookahead Audio
-          </span>
+          <a
+            href="https://buymeacoffee.com/vijaik2k7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 font-serif italic text-[11px] text-[var(--text-secondary)] hover:text-amber-500 transition-colors"
+            title="Buy me a coffee"
+          >
+            <Coffee className="w-3.5 h-3.5 text-amber-500" />
+            <span>Buy me a coffee</span>
+          </a>
         </div>
       </footer>
     </div>
