@@ -60,12 +60,28 @@
     }
     </script>
 
+    <!-- Google Analytics 4 (GA4) Tag Container -->
+    <script>
+      window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // Replace with your GA4 Measurement ID
+      if (window.GA_MEASUREMENT_ID && window.GA_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_MEASUREMENT_ID;
+        document.head.appendChild(gaScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', window.GA_MEASUREMENT_ID);
+      }
+    </script>
+
     <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index.1789199279413.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index.1789199279413.css">
+    <script type="module" crossorigin src="./assets/index.1789238412447.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index.1789238412447.css">
   </head>
   <body class="bg-[#141413] text-[#EDECE8] font-sans antialiased selection:bg-[#D97757] selection:text-white h-screen overflow-hidden">
     <div id="root"></div>
